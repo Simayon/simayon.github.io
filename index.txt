@@ -2,23 +2,23 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
+alt = Simayon Thampi
+Simayon Thampi
 Web developer
 
 Show Contacts
 
 Email
-richard@example.com
+simayonthampi@gmail.com
 
 Phone
-+1 (213) 352-2795
++91 8943521732
 
 Birthday
-June 23, 1982
+October 6th, 2000
 
 Location
-Sacramento, California, USA
+Kochi, Kerala, India
 
 # navbar
 
@@ -32,10 +32,7 @@ Contact
 
 About me
 
-I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
-
-My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
-
+I'm an experienced embedded systems developer with a focus on creating innovative solutions across various domains. With 1 year of experience at a leading design service company, I specialize in developing advanced embedded systems, real-time operating systems, hardware design, and artificial intelligence applications.
 
 ## service
 
