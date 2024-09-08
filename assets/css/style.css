@@ -830,9 +830,9 @@ main {
 }
 
 .url-link {
-  color: var(--light-gray); /* Customize the color */
-  text-decoration: none; /* Remove the underline */
-  font-weight: bold; /* Make it bold */
+  color: var(--vegas-gold);
+  text-decoration: none;
+  font-weight: bold;
   position: relative;
 }
 
@@ -849,7 +849,7 @@ main {
 }
 
 .url-link:hover::after {
-  width: 100%; /* On hover, underline animation */
+  width: 60%; /* On hover, underline animation */
 }
 
 .url-link:hover {
