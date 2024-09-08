@@ -829,6 +829,33 @@ main {
   line-height: 1.6;
 }
 
+.url-link {
+  color: var(--light-gray); /* Customize the color */
+  text-decoration: none; /* Remove the underline */
+  font-weight: bold; /* Make it bold */
+  position: relative;
+}
+
+.url-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--bittersweet-shimmer); /* Line color under the link */
+  transition: width 1.0s;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+.url-link:hover::after {
+  width: 100%; /* On hover, underline animation */
+}
+
+.url-link:hover {
+  color: var(--vegas-gold); /* Change the color on hover */
+}
+
 
 /**
  * skills 
