@@ -12,11 +12,11 @@
   display: flex;
   z-index: 100;
   position: sticky;
-  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  box-shadow: 5px 5px 10px 0px var(--ctp-surface1);
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--dl-color-gray-white);
+  background-color: var(--ctp-base);
 }
 .home-navbar {
   width: 100%;
@@ -68,13 +68,13 @@
   justify-content: space-between;
 }
 .home-cta-btn {
-  color: var(--dl-color-gray-white);
+  color: var(--ctp-crust);
   padding-top: var(--dl-space-space-unit);
   padding-left: var(--dl-space-space-fiveunits);
   border-radius: 34px;
   padding-right: var(--dl-space-space-fiveunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: var(--dl-color-primary-100);
+  background-color: var(--ctp-mauve);
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -99,7 +99,7 @@
   position: absolute;
   align-items: flex-start;
   flex-direction: column;
-  background-color: var(--dl-color-gray-white);
+  background-color: var(--ctp-base);
 }
 .home-top {
   flex: 0 0 auto;
@@ -153,13 +153,13 @@
   text-decoration: none;
 }
 .home-cta-btn1 {
-  color: var(--dl-color-gray-white);
+  color: var(--ctp-crust);
   padding-top: var(--dl-space-space-unit);
   padding-left: var(--dl-space-space-fiveunits);
   border-radius: 34px;
   padding-right: var(--dl-space-space-fiveunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: var(--dl-color-primary-100);
+  background-color: var(--ctp-mauve);
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -218,18 +218,18 @@
   margin-bottom: var(--dl-space-space-tripleunit);
 }
 .home-text03 {
-  color: var(--dl-color-gray-500);
+  color: var(--ctp-subtext1);
   margin-bottom: var(--dl-space-space-tripleunit);
 }
 .home-cta-btn2 {
-  color: var(--dl-color-gray-white);
+  color: var(--ctp-crust);
   align-self: stretch;
   text-align: center;
   padding-top: var(--dl-space-space-doubleunit);
   border-width: 0px;
   border-radius: 34px;
   padding-bottom: var(--dl-space-space-doubleunit);
-  background-color: var(--dl-color-primary-100);
+  background-color: var(--ctp-mauve);
 }
 .home-image2 {
   width: 50%;
@@ -241,7 +241,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: var(--dl-color-gray-700);
+  background-color: var(--ctp-surface1);
 }
 .home-features {
   width: 100%;
@@ -576,7 +576,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: var(--dl-color-gray-700);
+  background-color: var(--ctp-surface1);
 }
 .home-testimonials {
   width: 100%;

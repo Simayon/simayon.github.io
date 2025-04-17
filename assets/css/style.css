@@ -18,56 +18,56 @@
 :root {
 
   /**
-   * colors
+   * colors - Catppuccin Mocha palette
    */
 
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    to bottom right,
+    hsl(240, 21%, 15%) 3%,
+    hsl(240, 24%, 10%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+    to bottom right,
+    hsla(240, 21%, 15%, 0.251) 0%,
+    hsla(240, 24%, 10%, 0) 100%
+  ), hsl(240, 21%, 15%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
+    to bottom right,
+    hsl(23, 92%, 75%) 0%,
+    hsla(23, 92%, 75%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
+    135deg,
+    hsla(23, 92%, 75%, 0.251) 0%,
+    hsla(23, 92%, 75%, 0) 59.86%
+  ), hsl(240, 21%, 15%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    to bottom right,
+    hsl(240, 24%, 20%) 0%,
+    hsla(240, 24%, 20%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
+    to right,
+    hsl(23, 92%, 75%),
+    hsl(41, 86%, 83%)
   );
 
-  /* solid */
+  /* solid - Catppuccin Mocha colors */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --jet: hsl(240, 21%, 15%); /* crust */
+  --onyx: hsl(240, 21%, 15%); /* mantle */
+  --eerie-black-1: hsl(240, 24%, 10%); /* base */
+  --eerie-black-2: hsl(240, 21%, 15%); /* mantle */
+  --smoky-black: hsl(240, 24%, 10%); /* base */
+  --white-1: hsl(226, 64%, 88%); /* text */
+  --white-2: hsl(226, 64%, 88%); /* text */
+  --orange-yellow-crayola: hsl(23, 92%, 75%); /* peach */
+  --vegas-gold: hsl(41, 86%, 83%); /* yellow */
+  --light-gray: hsl(227, 35%, 80%); /* subtext0 */
+  --light-gray-70: hsla(227, 35%, 80%, 0.7); /* subtext0 with opacity */
+  --bittersweet-shimmer: hsl(343, 81%, 75%); /* pink */
 
   /**
    * typography
@@ -95,7 +95,7 @@
   /**
    * shadow
    */
-  
+
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
@@ -148,14 +148,14 @@ input, textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: var(--eerie-black-1);
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { background: var(--eerie-black-1); }
 
 
 
@@ -459,12 +459,20 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
+  background: hsla(240, 21%, 20%, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--ctp-surface1);
   border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
+  box-shadow: 0 -5px 20px rgba(183, 189, 248, 0.15), 0 -2px 10px rgba(198, 160, 246, 0.1);
   z-index: 5;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 -8px 25px rgba(183, 189, 248, 0.25), 0 -4px 15px rgba(198, 160, 246, 0.15);
 }
 
 .navbar-list {
@@ -476,17 +484,71 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: var(--ctp-subtext0);
   font-size: var(--fs-8);
   padding: 20px 7px;
-  transition: color var(--transition-1);
+  transition: color var(--transition-1), transform 0.2s ease;
+}
+
+.navbar-link:hover {
+  transform: scale(1.1);
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus { color: var(--ctp-text); }
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { color: var(--ctp-mauve); }
 
+/* Pixie Dust Animation */
+.navbar::before,
+.navbar::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.navbar::before {
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(198, 160, 246, 0.15) 0%, rgba(198, 160, 246, 0) 50%);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.navbar:hover::before {
+  opacity: 1;
+}
+
+@keyframes pixieDust {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px) scale(1);
+    opacity: 0;
+  }
+}
+
+.pixie-dust {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ctp-mauve);
+  box-shadow: 0 0 6px var(--ctp-lavender), 0 0 12px var(--ctp-pink);
+  animation: pixieDust 3s ease-in-out infinite;
+  opacity: 0;
+  z-index: -1;
+}
 
 
 
@@ -509,7 +571,7 @@ main {
 
 
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
@@ -557,7 +619,7 @@ main {
 
 
 /**
- * #testimonials 
+ * #testimonials
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -769,7 +831,7 @@ main {
 
 
 /**
- * education and experience 
+ * education and experience
  */
 
 .timeline { margin-bottom: 30px; }
@@ -859,7 +921,7 @@ main {
 
 
 /**
- * skills 
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -1272,7 +1334,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #PORTFOLIO, BLOG
    */
 
   .project-img,
@@ -1666,7 +1728,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
 }
 
 
@@ -1709,7 +1771,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * MAIN 
+   * MAIN
    */
 
   main { margin-bottom: 60px; }

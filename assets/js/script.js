@@ -157,3 +157,69 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Pixie Dust Animation for Navbar
+const navbar = document.querySelector('.navbar');
+
+// Create hover effect that follows cursor
+navbar.addEventListener('mousemove', (e) => {
+  const rect = navbar.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / navbar.offsetWidth) * 100;
+  const y = ((e.clientY - rect.top) / navbar.offsetHeight) * 100;
+
+  navbar.style.setProperty('--x', `${x}%`);
+  navbar.style.setProperty('--y', `${y}%`);
+
+  // Create pixie dust particles on mouse move
+  createPixieDust(e.clientX - rect.left, e.clientY - rect.top);
+});
+
+// Function to create pixie dust particles
+function createPixieDust(x, y) {
+  // Only create particles occasionally for performance
+  if (Math.random() > 0.3) return;
+
+  const particle = document.createElement('div');
+  particle.className = 'pixie-dust';
+
+  // Random size
+  const size = Math.random() * 4 + 2;
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+
+  // Position at mouse
+  particle.style.left = `${x}px`;
+  particle.style.top = `${y}px`;
+
+  // Random animation duration
+  const duration = Math.random() * 2 + 1;
+  particle.style.animationDuration = `${duration}s`;
+
+  // Random delay
+  const delay = Math.random() * 0.5;
+  particle.style.animationDelay = `${delay}s`;
+
+  // Random direction
+  const angle = Math.random() * 360;
+  const distance = Math.random() * 50 + 10;
+  particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+
+  // Random color from Catppuccin palette
+  const colors = [
+    'var(--ctp-mauve)',
+    'var(--ctp-pink)',
+    'var(--ctp-lavender)',
+    'var(--ctp-blue)',
+    'var(--ctp-sapphire)'
+  ];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  particle.style.backgroundColor = color;
+
+  // Add to navbar
+  navbar.appendChild(particle);
+
+  // Remove after animation completes
+  setTimeout(() => {
+    particle.remove();
+  }, (duration + delay) * 1000);
+}

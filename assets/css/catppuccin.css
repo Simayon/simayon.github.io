@@ -1,0 +1,56 @@
+/*-----------------------------------*\
+  #CATPPUCCIN THEME VARIABLES
+\*-----------------------------------*/
+
+:root {
+  /* Catppuccin Mocha palette */
+  --ctp-rosewater: hsl(10, 56%, 91%);
+  --ctp-flamingo: hsl(0, 59%, 88%);
+  --ctp-pink: hsl(316, 72%, 86%);
+  --ctp-mauve: hsl(267, 84%, 81%);
+  --ctp-red: hsl(343, 81%, 75%);
+  --ctp-maroon: hsl(355, 76%, 80%);
+  --ctp-peach: hsl(23, 92%, 75%);
+  --ctp-yellow: hsl(41, 86%, 83%);
+  --ctp-green: hsl(128, 58%, 79%);
+  --ctp-teal: hsl(171, 47%, 81%);
+  --ctp-sky: hsl(189, 71%, 73%);
+  --ctp-sapphire: hsl(199, 76%, 69%);
+  --ctp-blue: hsl(220, 83%, 75%);
+  --ctp-lavender: hsl(239, 66%, 84%);
+  --ctp-text: hsl(226, 64%, 88%);
+  --ctp-subtext1: hsl(227, 35%, 80%);
+  --ctp-subtext0: hsl(228, 24%, 72%);
+  --ctp-overlay2: hsl(228, 17%, 64%);
+  --ctp-overlay1: hsl(230, 13%, 55%);
+  --ctp-overlay0: hsl(231, 11%, 47%);
+  --ctp-surface2: hsl(233, 12%, 38%);
+  --ctp-surface1: hsl(234, 13%, 28%);
+  --ctp-surface0: hsl(237, 16%, 23%);
+  --ctp-base: hsl(240, 21%, 15%);
+  --ctp-mantle: hsl(240, 21%, 12%);
+  --ctp-crust: hsl(240, 23%, 9%);
+
+  /* Map Catppuccin colors to existing theme variables */
+  --dl-color-gray-white: var(--ctp-text);
+  --dl-color-gray-black: var(--ctp-crust);
+  --dl-color-gray-500: var(--ctp-subtext1);
+  --dl-color-gray-700: var(--ctp-surface1);
+  --dl-color-gray-900: var(--ctp-mantle);
+
+  --dl-color-primary-100: var(--ctp-mauve);
+  --dl-color-primary-300: var(--ctp-lavender);
+  --dl-color-primary-500: var(--ctp-blue);
+  --dl-color-primary-700: var(--ctp-sapphire);
+
+  --dl-color-success-300: var(--ctp-green);
+  --dl-color-success-500: var(--ctp-teal);
+
+  --dl-color-error-300: var(--ctp-red);
+  --dl-color-error-500: var(--ctp-maroon);
+
+  /* Background colors */
+  --dl-background-primary: var(--ctp-base);
+  --dl-background-secondary: var(--ctp-mantle);
+  --dl-background-tertiary: var(--ctp-crust);
+}
