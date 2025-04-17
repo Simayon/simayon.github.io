@@ -1,0 +1,27 @@
+/* Easily removable Under Construction tag - just remove the link from HTML */
+.under-construction-tag {
+  position: fixed;
+  top: 24px;
+  right: -48px;
+  z-index: 9999;
+  background: linear-gradient(90deg, #ffb347 60%, #ffcc80 100%);
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  padding: 8px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: rotate(35deg);
+  pointer-events: none;
+  opacity: 0.93;
+}
+@media (max-width: 600px) {
+  .under-construction-tag {
+    top: 12px;
+    right: -36px;
+    font-size: 0.93rem;
+    padding: 6px 24px;
+  }
+}
