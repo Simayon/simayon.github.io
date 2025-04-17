@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.roadmap-card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 2.5rem auto;
+}
+@media (min-width: 540px) {
+  .roadmap-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .roadmap-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.card {
+  list-style: none;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  text-decoration: none;
+  min-height: 340px;
+  background: transparent;
+  transition: box-shadow 0.2s;
+}
+.card:before {
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+.card__background {
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: filter 200ms linear, transform 200ms linear;
+}
+.card:hover .card__background {
+  transform: scale(1.05) translateZ(0);
+}
+.roadmap-card-grid:hover > .card:not(:hover) .card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(18px);
+}
+.card__content {
+  left: 0;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(0deg, rgba(24,29,40,0.75) 60%, rgba(24,29,40,0.10) 100%);
+  border-radius: 24px;
+}
+.card__category {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.96rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.card__heading {
+  color: #fff;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.17);
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}

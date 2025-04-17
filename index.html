@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="./assets/css/catppuccin.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/portfolio.css">
+  <link rel="stylesheet" href="./assets/css/roadmap-cards.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
   <!--
     - google font link
@@ -367,106 +369,70 @@
           - testimonials
         -->
 
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Ajith Kumar</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Simayon demonstrated exceptional skills in embedded systems development. His work on the MIPI CSI-2
-                    driver
-                    and IoT framework showcased both technical excellence and innovative problem-solving abilities. His
-                    dedication
-                    to delivering high-quality solutions makes him a valuable asset to any technical team.
-                  </p>
-                </div>
-
+        <!-- Project Roadmap / What’s Next -->
+        <section class="roadmap-content">
+          <h3 class="h3" style="margin-bottom: 2rem;">Project Roadmap / What’s Next</h3>
+          <div class="card-grid roadmap-card-grid">
+            <a class="card" href="#">
+              <div class="card__background"
+                style="background-image: url('https://images.unsplash.com/photo-1557177324-56c542165309?auto=format&fit=crop&w=800&q=80');">
               </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr. Sudha Balagopalan</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    As Simayon's project guide, I was impressed by his innovative approach to robotics and automation.
-                    His work on autonomous systems and AI integration demonstrated not only technical proficiency but
-                    also a deep understanding of real-world applications. His academic excellence and practical skills
-                    make him stand out.
-                  </p>
-                </div>
-
+              <div class="card__content">
+                <p class="card__category">In Progress</p>
+                <h3 class="card__heading">Edge AI Accelerator</h3>
+                <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-top:0.7rem;">Prototyping a custom
+                  accelerator for real-time video analytics on embedded platforms.</p>
               </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Simayon was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
+            </a>
+            <a class="card" href="#">
+              <div class="card__background"
+                style="background-image: url('https://images.unsplash.com/photo-1557187666-4fd70cf76254?auto=format&fit=crop&w=800&q=60');">
               </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Simayon was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
+              <div class="card__content">
+                <p class="card__category">Planned</p>
+                <h3 class="card__heading">IoT Security Suite</h3>
+                <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-top:0.7rem;">Designing a modular security
+                  framework for IoT deployments.</p>
               </div>
-            </li>
-
-          </ul>
-
+            </a>
+            <a class="card" href="#">
+              <div class="card__background"
+                style="background-image: url('https://images.unsplash.com/photo-1556680262-9990363a3e6d?auto=format&fit=crop&w=800&q=60');">
+              </div>
+              <div class="card__content">
+                <p class="card__category">Upcoming</p>
+                <h3 class="card__heading">Open Source Contributions</h3>
+                <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-top:0.7rem;">Preparing to release
+                  reusable drivers and middleware for STM32 and Xilinx platforms.</p>
+              </div>
+            </a>
+          </div>
         </section>
 
-        <!--
-          - testimonials modal
-        -->
+        <!-- FAQ / About My Work -->
+        <section class="faq-content" style="padding-top:2.2rem; padding-bottom:2.2rem;">
+          <h3 class="h3">FAQ / About My Work</h3>
+          <ul class="faq-list">
+            <li>
+              <strong>What’s your approach to new projects?</strong>
+              <p>I focus on understanding the problem deeply, iterating quickly with prototypes, and ensuring robust,
+                maintainable solutions.</p>
+            </li>
+            <li>
+              <strong>Which technologies do you enjoy most?</strong>
+              <p>I love working with embedded Linux, FPGAs, and AI/ML frameworks—especially where they intersect in
+                real-world applications.</p>
+            </li>
+            <li>
+              <strong>How do you stay updated in tech?</strong>
+              <p>I regularly contribute to open source, attend webinars, and experiment with new hardware and software
+                stacks.</p>
+            </li>
+          </ul>
+        </section>
+        <!-- END: New About Sections -->
+
+
 
         <div class="modal-container" data-modal-container>
 
@@ -1217,12 +1183,6 @@
       </article>
 
 
-
-
-
-      <!--
-        - #CONTACT
-      -->
 
       <article class="contact" data-page="contact">
 

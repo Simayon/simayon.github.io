@@ -1,4 +1,196 @@
 /* Portfolio Section Styling */
+
+.glass-section {
+  background: rgba(255,255,255,0.13);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.roadmap-list {
+  /* legacy, can be removed if not used elsewhere */
+}
+
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  position: relative;
+  margin: 2rem 0 2.5rem 0;
+  padding-left: 1.5rem;
+}
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--orange-yellow-crayola), var(--vegas-gold));
+  opacity: 0.25;
+  border-radius: 2px;
+}
+.roadmap-milestone {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.roadmap-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+  margin-top: 0.2rem;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.12);
+  border: 3px solid #fff;
+  position: relative;
+  z-index: 2;
+}
+.roadmap-dot.in-progress {
+  background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+}
+.roadmap-dot.planned {
+  background: linear-gradient(135deg, #b0b0b0, #e9d8a6);
+}
+.roadmap-dot.upcoming {
+  background: linear-gradient(135deg, #c9c9c9, #f5e7b2);
+}
+.roadmap-details {
+  flex: 1;
+}
+.roadmap-title {
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.roadmap-badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 8px;
+  font-size: 0.93em;
+  font-weight: 600;
+  margin-left: 0.7rem;
+  letter-spacing: 0.02em;
+}
+.roadmap-badge.in-progress {
+  background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+  color: #222;
+}
+.roadmap-badge.planned {
+  background: #e9d8a6;
+  color: #444;
+}
+.roadmap-badge.upcoming {
+  background: #f5e7b2;
+  color: #555;
+}
+.roadmap-desc {
+  color: var(--light-gray);
+  font-size: 1.01rem;
+  margin-left: 0.1rem;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 600px) {
+  .roadmap-timeline {
+    padding-left: 0.6rem;
+  }
+  .roadmap-dot {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.7rem;
+  }
+  .roadmap-title {
+    font-size: 1rem;
+  }
+}
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.roadmap-list li {
+  margin-bottom: 1.2rem;
+  font-size: 1.09rem;
+  color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.roadmap-status {
+  background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+  color: #222;
+  border-radius: 8px;
+  font-size: 0.97em;
+  font-weight: 600;
+  padding: 2px 12px;
+  margin-left: 14px;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.08);
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.faq-list li {
+  margin-bottom: 1.5rem;
+}
+.faq-list strong {
+  font-size: 1.07rem;
+  color: var(--orange-yellow-crayola);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.faq-list p {
+  color: var(--light-gray);
+  font-size: 1.03rem;
+  margin: 0;
+}
+
+.skills-matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.7rem;
+  margin-top: 1rem;
+}
+.skills-matrix-table th, .skills-matrix-table td {
+  text-align: left;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255,255,255,0.10);
+  border-radius: 10px;
+  color: var(--light-gray);
+}
+.skills-matrix-table th {
+  background: rgba(255,255,255,0.19);
+  color: var(--orange-yellow-crayola);
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+.skills-matrix-table progress {
+  vertical-align: middle;
+  accent-color: var(--orange-yellow-crayola);
+  height: 1rem;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .glass-section {
+    padding: 1rem;
+  }
+  .skills-matrix-table th, .skills-matrix-table td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.97rem;
+  }
+}
 .portfolio-intro {
   text-align: center;
   margin-bottom: 2rem;
