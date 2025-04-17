@@ -134,6 +134,63 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+// Handle form submission without page redirect
+if (form) {
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Show sending state
+    const originalBtnText = formBtn.innerHTML;
+    formBtn.innerHTML = '<ion-icon name="sync-outline"></ion-icon><span>Sending...</span>';
+    formBtn.classList.add('sending');
+
+    // Get form data
+    const formData = new FormData(form);
+
+    // Send data using fetch API
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+      // Success state
+      form.reset();
+      formBtn.setAttribute('disabled', '');
+      formBtn.innerHTML = '<ion-icon name="checkmark-circle-outline"></ion-icon><span>Message Sent!</span>';
+      formBtn.classList.remove('sending');
+      formBtn.classList.add('success');
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        formBtn.innerHTML = originalBtnText;
+        formBtn.classList.remove('success');
+      }, 3000);
+    })
+    .catch(error => {
+      // Error state
+      console.error('Error:', error);
+      formBtn.innerHTML = '<ion-icon name="alert-circle-outline"></ion-icon><span>Failed to Send</span>';
+      formBtn.classList.remove('sending');
+      formBtn.classList.add('error');
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        formBtn.innerHTML = originalBtnText;
+        formBtn.classList.remove('error');
+      }, 3000);
+    });
+  });
+}
+
 
 
 // page navigation variables
