@@ -754,12 +754,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" alt="Autonomous Shopping Cart">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -806,12 +801,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop" alt="Smart Cold Storage System">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -858,12 +848,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1599008633840-052c7f756385?w=600&h=400&fit=crop" alt="Speech Assist Module">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -910,12 +895,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="LLM Web Crawler">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -962,12 +942,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop" alt="Smart Home Automation System">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -1014,12 +989,7 @@
               <div class="portfolio-card-header">
                 <div class="portfolio-img-container">
                   <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&h=400&fit=crop" alt="Autonomous Drone Navigation">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-overlay-content">
-                      <ion-icon name="eye-outline" class="view-icon"></ion-icon>
-                      <span>View Project</span>
-                    </div>
-                  </div>
+<!-- Removed View Project overlay -->
                 </div>
               </div>
 
@@ -1061,70 +1031,25 @@
           </div>
         </div>
 
-        <!-- Project Detail Modals -->
+        <!-- Project Detail Modal (Dynamic) -->
         <div class="portfolio-modal-container">
-          <!-- Project 1 Modal -->
-          <div class="portfolio-modal" id="project1-modal">
+          <div class="portfolio-modal">
             <div class="modal-content">
               <div class="modal-header">
-                <h3>Autonomous Shopping Cart</h3>
+                <h3>Project Details</h3>
                 <button class="modal-close"><ion-icon name="close-outline"></ion-icon></button>
               </div>
               <div class="modal-body">
                 <div class="modal-image">
-                  <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" alt="Autonomous Shopping Cart">
+                  <img src="" alt="Project Image">
                 </div>
                 <div class="modal-details">
-                  <div class="detail-section">
-                    <h4>Project Overview</h4>
-                    <p>An autonomous shopping cart system that uses RFID technology for automatic billing and computer vision for navigation. The system reduced checkout times by 60% in pilot tests.</p>
-                  </div>
-                  <div class="detail-section">
-                    <h4>Technical Challenges</h4>
-                    <p>Implementing real-time object detection in a crowded environment required optimizing neural networks to run efficiently on FPGA hardware. The system needed to handle varying lighting conditions and dynamic obstacles.</p>
-                  </div>
-                  <div class="detail-section">
-                    <h4>Key Features</h4>
-                    <ul>
-                      <li>RFID-based automatic product identification and billing</li>
-                      <li>Real-time obstacle detection and avoidance</li>
-                      <li>User-friendly interface with voice commands</li>
-                      <li>Integration with store inventory management systems</li>
-                      <li>Battery-efficient design with 8+ hours of operation</li>
-                    </ul>
-                  </div>
-                  <div class="detail-section">
-                    <h4>Technologies Used</h4>
-                    <div class="modal-tech-tags">
-                      <span>TensorFlow</span>
-                      <span>Python</span>
-                      <span>FPGA</span>
-                      <span>OpenCV</span>
-                      <span>RFID</span>
-                      <span>Embedded Linux</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <div class="modal-links">
-                  <a href="https://github.com/simayon/autonomous-cart" target="_blank" class="modal-link">
-                    <ion-icon name="logo-github"></ion-icon> View Repository
-                  </a>
-                  <a href="#" target="_blank" class="modal-link">
-                    <ion-icon name="document-text-outline"></ion-icon> Technical Documentation
-                  </a>
-                  <a href="#" target="_blank" class="modal-link">
-                    <ion-icon name="play-outline"></ion-icon> Watch Demo
-                  </a>
+                  <!-- Details will be dynamically populated by JavaScript -->
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Additional modals for other projects would be here -->
         </div>
-
       </article>
 
 

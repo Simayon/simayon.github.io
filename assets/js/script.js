@@ -132,6 +132,150 @@ if (filterItems.length > 0) {
 
 
 
+// Portfolio modal functionality
+const portfolioItems = document.querySelectorAll(".portfolio-card");
+const portfolioModalContainer = document.querySelector(".portfolio-modal-container");
+const portfolioModal = document.querySelector(".portfolio-modal");
+const portfolioModalCloseBtn = document.querySelector(".portfolio-modal .modal-close");
+
+// Check if portfolio elements exist
+if (portfolioItems.length > 0 && portfolioModalContainer && portfolioModal) {
+  // Modal toggle function
+  const portfolioModalToggle = function() {
+    portfolioModalContainer.classList.toggle("active");
+    portfolioModal.classList.toggle("active");
+    document.body.classList.toggle("modal-open"); // Prevent scrolling when modal is open
+  }
+
+  // Add click event to all portfolio cards
+  portfolioItems.forEach(item => {
+    // Only make the card clickable, not the action buttons
+    item.addEventListener("click", function(e) {
+      // Ignore clicks on action buttons
+      if (e.target.closest('.portfolio-btn') || e.target.closest('.details-btn')) {
+        return;
+      }
+
+      // Get project details
+      const title = this.querySelector(".portfolio-title").textContent;
+      const description = this.querySelector(".portfolio-description").textContent;
+      const category = this.querySelector(".portfolio-category-tag").textContent;
+      const year = this.querySelector(".portfolio-year").textContent;
+      const imgSrc = this.querySelector(".portfolio-img-container img").src;
+
+      // Get tech tags
+      const techTags = [];
+      this.querySelectorAll(".tech-tag").forEach(tag => {
+        techTags.push(tag.textContent);
+      });
+
+      // Get action buttons data
+      const actionButtons = [];
+      this.querySelectorAll(".portfolio-btn").forEach(btn => {
+        if (btn.href) {
+          actionButtons.push({
+            type: btn.classList.contains('github-btn') ? 'github' :
+                  btn.classList.contains('demo-btn') ? 'demo' :
+                  btn.classList.contains('docs-btn') ? 'docs' :
+                  btn.classList.contains('paper-btn') ? 'paper' : 'link',
+            url: btn.href,
+            text: btn.querySelector('span') ? btn.querySelector('span').textContent : ''
+          });
+        }
+      });
+
+      // Populate modal content
+      portfolioModal.querySelector(".modal-header h3").textContent = title;
+      portfolioModal.querySelector(".modal-image img").src = imgSrc;
+
+      // Clear and populate details
+      const detailsContainer = portfolioModal.querySelector(".modal-details");
+      detailsContainer.innerHTML = '';
+
+      // Add overview section
+      const overviewSection = document.createElement('div');
+      overviewSection.className = 'detail-section';
+      overviewSection.innerHTML = `
+        <h4>Overview</h4>
+        <p>${description}</p>
+        <div class="project-meta">
+          <span><strong>Category:</strong> ${category}</span>
+          <span><strong>Year:</strong> ${year}</span>
+        </div>
+      `;
+      detailsContainer.appendChild(overviewSection);
+
+      // Add technologies section
+      const techSection = document.createElement('div');
+      techSection.className = 'detail-section';
+      techSection.innerHTML = `
+        <h4>Technologies</h4>
+        <div class="modal-tech-tags">
+          ${techTags.map(tag => `<span>${tag}</span>`).join('')}
+        </div>
+      `;
+      detailsContainer.appendChild(techSection);
+
+      // Add action buttons
+      if (actionButtons.length > 0) {
+        const actionsSection = document.createElement('div');
+        actionsSection.className = 'detail-section';
+        actionsSection.innerHTML = `
+          <h4>Project Links</h4>
+          <div class="modal-actions">
+            ${actionButtons.map(btn => `
+              <a href="${btn.url}" target="_blank" class="modal-btn modal-${btn.type}-btn">
+                <ion-icon name="${btn.type === 'github' ? 'logo-github' :
+                                  btn.type === 'demo' ? 'desktop-outline' :
+                                  btn.type === 'docs' ? 'document-text-outline' :
+                                  btn.type === 'paper' ? 'newspaper-outline' : 'link-outline'}"></ion-icon>
+                ${btn.text || (btn.type === 'github' ? 'Repository' :
+                              btn.type === 'demo' ? 'Live Demo' :
+                              btn.type === 'docs' ? 'Documentation' :
+                              btn.type === 'paper' ? 'Paper' : 'Link')}
+              </a>
+            `).join('')}
+          </div>
+        `;
+        detailsContainer.appendChild(actionsSection);
+      }
+
+      // Open modal
+      portfolioModalToggle();
+    });
+  });
+
+  // Add click event to details button
+  document.querySelectorAll(".details-btn").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // Trigger click on the parent card
+      this.closest('.portfolio-card').click();
+    });
+  });
+
+  // Add click event to modal close button
+  if (portfolioModalCloseBtn) {
+    portfolioModalCloseBtn.addEventListener("click", portfolioModalToggle);
+  }
+
+  // Close modal when clicking outside
+  portfolioModalContainer.addEventListener("click", function(e) {
+    if (e.target === this) {
+      portfolioModalToggle();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && portfolioModalContainer.classList.contains("active")) {
+      portfolioModalToggle();
+    }
+  });
+}
+
+
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
